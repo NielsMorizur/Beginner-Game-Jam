@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5170463283156393170}
   - component: {fileID: 8552784536651103310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,9 +102,9 @@ GameObject:
   - component: {fileID: 4603719984743075820}
   - component: {fileID: 1876553221120718534}
   - component: {fileID: 1659258967952466736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   jumpBufferTime: 0.12
   shortHopMultiplier: 0.5
   groundCheck: {fileID: 6332823014881516228}
-  groundCheckRadius: 0.12
+  groundCheckRadius: 0.09
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6332823014881516228}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
