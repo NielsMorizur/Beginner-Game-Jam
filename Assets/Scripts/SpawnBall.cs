@@ -9,6 +9,7 @@ public class SpawnBall : MonoBehaviour
     public void Spawn()
     {
         if (ball == null) return;
+        if (GameManager.Instance.goalScored) return;
 
         if (hasSpawned)
         {

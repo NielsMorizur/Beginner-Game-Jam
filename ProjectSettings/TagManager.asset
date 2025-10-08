@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - UI
   - Ground
   - Player
-  - 
+  - GoalLight
   - 
   - 
   - 
@@ -43,6 +44,18 @@ TagManager:
     locked: 0
   - name: Door
     uniqueID: 3963120919
+    locked: 0
+  - name: Ball
+    uniqueID: 3524078647
+    locked: 0
+  - name: GoalLight
+    uniqueID: 78888421
+    locked: 0
+  - name: Goal
+    uniqueID: 3660238225
+    locked: 0
+  - name: LeverDoor
+    uniqueID: 33384495
     locked: 0
   - name: Ground
     uniqueID: 3322521547
