@@ -149,7 +149,7 @@ public class PlayerMove : MonoBehaviour
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     }
 
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         if (groundCheck == null) return false;
         Collider2D hit = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);

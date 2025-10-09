@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 10664d54612b4e3418c6707adb6fff1e
+guid: c522b55b68c1e2348a11e1b3b7a2d7e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7901007803763915540
-    second: GoalLight_0
+      213: 6389583908483349228
+    second: PlayerComplete3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GoalLight_0
+      name: PlayerComplete3_0
       rect:
         serializedVersion: 2
-        x: 31
+        x: 25
         y: 0
-        width: 12
-        height: 16
+        width: 15
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 41bffe67cb406ad60800000000000000
-      internalID: 7901007803763915540
+      spriteID: ceab3b716bc5ca850800000000000000
+      internalID: 6389583908483349228
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GoalLight_0: 7901007803763915540
+      PlayerComplete3_0: 6389583908483349228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
