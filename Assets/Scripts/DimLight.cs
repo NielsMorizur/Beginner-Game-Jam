@@ -41,5 +41,10 @@ public class DimLight : MonoBehaviour
             targetLight.intensity = 0f;
             isFading = false;
         }
+
+        if(GameManager.Instance.legsCollected)
+        {
+            enabled = false;
+        }
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3fbc150122950384fb799d865487eb98
+guid: 6ae2929faff30484a8a11e2a6392d1ba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5716011000481452050
-    second: PlayerLegsOnly_0
+      213: -2807135172560316466
+    second: SeesawStandv2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerLegsOnly_0
+      name: SeesawStandv2_0
       rect:
         serializedVersion: 2
-        x: 22
+        x: 18
         y: 0
-        width: 19
-        height: 23
+        width: 28
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eefe310a746aca0b0800000000000000
-      internalID: -5716011000481452050
+      spriteID: ec79903fe6d0b09d0800000000000000
+      internalID: -2807135172560316466
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerLegsOnly_0: -5716011000481452050
+      SeesawStandv2_0: -2807135172560316466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -34,11 +34,6 @@ public class PlayerMove : MonoBehaviour
     float lastGroundedTime = -999f;
     float lastJumpPressedTime = -999f;
 
-    [SerializeField] float slopeStopThreshold = 0.1f;     // minimum |moveInput| to consider "moving"
-    [SerializeField] float maxSlopeAngleToStop = 60f;     // only apply stop for slopes up to this angle
-    [SerializeField] float groundCheckDistance = 0.17f;
-
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -127,7 +122,13 @@ public class PlayerMove : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * shortHopMultiplier);
         }
 
-        HandleSlopeStop();
+        if (IsGrounded() && Mathf.Abs(moveInput) <= 0.1f)
+        {
+            rb.constraints |= RigidbodyConstraints2D.FreezePositionX;
+        }else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 
     void OnJumpPerformed(InputAction.CallbackContext ctx)
@@ -162,39 +163,6 @@ public class PlayerMove : MonoBehaviour
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        }
-    }
-
-    void HandleSlopeStop()
-    {
-        // If player is pressing (walking), don't stop
-        if (Mathf.Abs(moveInput) > slopeStopThreshold) return;
-
-        // Raycast down from the groundCheck point to detect ground and get the normal
-        Vector2 origin = groundCheck != null ? (Vector2)groundCheck.position : (Vector2)transform.position;
-        float distance = groundCheckDistance; // slightly larger than your ground check radius
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, distance, groundLayer);
-
-        if (!hit.collider) return; // not grounded according to this raycast
-
-        // compute slope angle
-        float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-        if (slopeAngle > maxSlopeAngleToStop) return; // too steep; maybe we want sliding
-
-        // compute downhill direction (perpendicular to normal)
-        // downhill = (normal.y, -normal.x) gives direction along slope pointing down
-        Vector2 downhill = new Vector2(hit.normal.y, -hit.normal.x).normalized;
-
-        // compute velocity component along downhill direction
-        float downhillVel = Vector2.Dot(rb.linearVelocity, downhill);
-
-        // If downhillVel is positive (meaning it's pointing downhill), remove that component
-        if (downhillVel > 0.0001f)
-        {
-            Vector2 cancel = downhill * downhillVel;
-            rb.linearVelocity = rb.linearVelocity - cancel;
-            // Optionally zero out small y wiggle if necessary:
-            // if (Mathf.Abs(rb.velocity.y) < 0.01f) rb.velocity = new Vector2(rb.velocity.x, 0f);
         }
     }
 }

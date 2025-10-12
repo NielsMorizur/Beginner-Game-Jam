@@ -51,6 +51,9 @@ TagManager:
   - name: GoalLight
     uniqueID: 78888421
     locked: 0
+  - name: Playground
+    uniqueID: 2377670111
+    locked: 0
   - name: Goal
     uniqueID: 3660238225
     locked: 0

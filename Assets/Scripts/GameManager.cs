@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public bool goalScored = false;
+    public bool legsCollected = false;
 
     private void Awake()
     {
@@ -20,5 +21,10 @@ public class GameManager : MonoBehaviour
     public void OnGoalScored()
     {
         goalScored = true;
+    }
+
+    public void OnLegsCollected()
+    {
+        legsCollected = true;
     }
 }
