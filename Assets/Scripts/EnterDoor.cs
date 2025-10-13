@@ -6,6 +6,13 @@ public class EnterDoor : MonoBehaviour
     public string levelToLoad = "LegsLevel";
     private bool playerInRange = false;
 
+    GameManager gm;
+
+    void Awake()
+    {
+        gm = GameManager.Instance;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -20,7 +27,7 @@ public class EnterDoor : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E) && !gm.legsCollected)
         {
             SceneManager.LoadScene(levelToLoad);
         }

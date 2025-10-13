@@ -8,6 +8,13 @@ public class GoalCheck : MonoBehaviour
     public string ballTag = "Ball";
 
     private GameObject ball;
+
+    GameManager gm;
+
+    void Awake()
+    {
+        gm = GameManager.Instance;
+    }
     
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +23,7 @@ public class GoalCheck : MonoBehaviour
             ball = collision.gameObject;
             Destroy(ball);
             scored = true;
+            gm.OnGoalScored();
             goalScored?.Invoke();
         }
     }
