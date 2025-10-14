@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 
     public bool goalScored = false;
     public bool legsCollected = false;
+    public bool upperCollected = false;
 
     private void Awake()
     {
@@ -26,5 +27,10 @@ public class GameManager : MonoBehaviour
     public void OnLegsCollected()
     {
         legsCollected = true;
+    }
+
+    public void OnUpperCollected()
+    {
+        upperCollected = true;
     }
 }
