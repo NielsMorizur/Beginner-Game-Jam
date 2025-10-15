@@ -27,7 +27,7 @@ public class ExitLevel2 : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E) && gm.upperCollected)
+        if (playerInRange && Input.GetKeyDown(KeyCode.E) && gm.upperCollected && gm.canExitLvl2)
         {
             SceneManager.LoadScene(levelToLoad);
         }

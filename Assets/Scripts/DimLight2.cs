@@ -10,8 +10,11 @@ public class DimLight2 : MonoBehaviour
 
     private float startIntensity;
 
+    GameManager gm;
+
     private void Awake()
     {
+        gm = GameManager.Instance;
         if (targetLight == null)
             targetLight = GetComponent<Light2D>();
 
@@ -40,6 +43,7 @@ public class DimLight2 : MonoBehaviour
         {
             targetLight.intensity = 0f;
             isFading = false;
+            gm.CanExitUpperLvl();
         }
     }
 }

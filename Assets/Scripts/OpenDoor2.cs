@@ -5,6 +5,24 @@ public class OpenDoor2 : MonoBehaviour
 {
     public float endY = -0.92f;
     public float duration = 3f;
+    private bool openingDoor = false;
+
+    GameManager gm;
+
+    void Awake()
+    {
+        gm = GameManager.Instance;
+    }
+
+    void Update()
+    {
+        if (gm.bothButtonsPressed && !openingDoor)
+        {
+            openingDoor = true;
+            GetComponentInChildren<DimLight2>().StartFade();
+            OpenDoor();
+        }
+    }
 
     public void OpenDoor()
     {
