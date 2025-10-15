@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ball
+  - Friend
   layers:
   - Default
   - TransparentFX
@@ -65,6 +66,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 555597583
+    locked: 0
+  - name: FriendLight
+    uniqueID: 844192361
+    locked: 0
+  - name: Friend
+    uniqueID: 346025903
     locked: 0
   m_RenderingLayers:
   - Default
