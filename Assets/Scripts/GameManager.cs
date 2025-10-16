@@ -5,12 +5,17 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public bool goalScored = false;
+    
     public bool legsCollected = false;
     public bool upperCollected = false;
+    public bool completeCollected = false;
+
     public bool buttonLPressed = false;
     public bool buttonRPressed = false;
     public bool bothButtonsPressed = false;
-    public bool canExitLvl2 = false;
+
+    public int candlesCollected = 0;
+    public bool allCandlesCollected = false;
 
     private void Awake()
     {
@@ -43,6 +48,11 @@ public class GameManager : MonoBehaviour
         upperCollected = true;
     }
 
+    public void OnCompleteCollected()
+    {
+        completeCollected = true;
+    }
+
     public void OnButtonLPressed()
     {
         buttonLPressed = true;
@@ -62,9 +72,10 @@ public class GameManager : MonoBehaviour
     {
         buttonRPressed = true;
     }
-    
-    public void CanExitUpperLvl()
+
+    public void OnCandleCollected()
     {
-        canExitLvl2 = true;
+        candlesCollected += 1;
+        if (candlesCollected >= 5) allCandlesCollected = true;
     }
 }

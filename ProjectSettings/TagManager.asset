@@ -64,6 +64,9 @@ TagManager:
   - name: Ground
     uniqueID: 3322521547
     locked: 0
+  - name: Candle
+    uniqueID: 1257637875
+    locked: 0
   - name: Player
     uniqueID: 555597583
     locked: 0

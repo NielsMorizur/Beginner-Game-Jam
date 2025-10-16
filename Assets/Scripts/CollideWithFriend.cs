@@ -21,6 +21,7 @@ public class CollideWithFriend : MonoBehaviour
         {
             gm.upperCollected = true;
             friendObject.GetComponent<PlayerMove>().enabled = false;
+            friendRb.constraints |= RigidbodyConstraints2D.FreezePosition;
             friendCollided?.Invoke();
             Invoke("delayMovementEnabled", 1.5f);
             friendObject.GetComponentInChildren<SpriteRenderer>().enabled = false;

@@ -31,5 +31,12 @@ public class EnterDoor2 : MonoBehaviour
         {
             SceneManager.LoadScene(levelToLoad);
         }
+        
+        if (gm.upperCollected)
+        {
+            Color newColor;
+            ColorUtility.TryParseHtmlString("#E5E5E5", out newColor);
+            GetComponent<SpriteRenderer>().color = newColor;
+        }
     }
 }

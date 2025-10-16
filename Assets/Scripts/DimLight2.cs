@@ -43,7 +43,6 @@ public class DimLight2 : MonoBehaviour
         {
             targetLight.intensity = 0f;
             isFading = false;
-            gm.CanExitUpperLvl();
         }
     }
 }

@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 555597583
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 3667528377976430903, guid: 8b35d7e5d8232c24bba53ea200639c88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -126,6 +126,14 @@ MonoBehaviour:
   walkSprite1Legs: {fileID: 7540784184559501725, guid: 096e7dfc520f19342ac8da2117dd1723, type: 3}
   walkSprite2Legs: {fileID: -4127463727657239505, guid: 6ced6e2a2f93bb543b1f1488716e93b3, type: 3}
   jumpSpriteLegs: {fileID: 8888888198793484238, guid: c1208c6a72369814ab6e7dc6d79f88bd, type: 3}
+  idleSpriteUpper: {fileID: -6572126653202356, guid: d3b55b59f79ce624b8a72a7705d61dd6, type: 3}
+  walkSprite1Upper: {fileID: -7278547712814688322, guid: d3881872d88b3814d850b391ddb61e45, type: 3}
+  walkSprite2Upper: {fileID: -6873753812013761332, guid: cd572fd1924fc1d4d9aa3875984c48c1, type: 3}
+  jumpSpriteUpper: {fileID: 4535721204881176092, guid: 60a2ba2248fc4834c888934a9b912c5a, type: 3}
+  idleSpriteComplete: {fileID: 7352930713478875019, guid: afa951b882af56e458b7c40bb38a78dc, type: 3}
+  walkSprite1Complete: {fileID: 6389583908483349228, guid: c522b55b68c1e2348a11e1b3b7a2d7e8, type: 3}
+  walkSprite2Complete: {fileID: -694288144318702792, guid: d6711d72999c268449f22563a2f2b46b, type: 3}
+  jumpSpriteComplete: {fileID: -700137553922220137, guid: 7b358dbdb1d199e4590ce7a09879e6d7, type: 3}
 --- !u!1 &4867563470829809795
 GameObject:
   m_ObjectHideFlags: 0
