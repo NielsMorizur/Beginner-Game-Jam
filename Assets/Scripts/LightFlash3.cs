@@ -30,6 +30,7 @@ public class LightFlash3 : MonoBehaviour
 
     public void ResetLight()
     {
+        StopAllCoroutines();
         light2d.enabled = true;
         light2d.intensity = initialIntensity;
         transform.localScale = initialScale;

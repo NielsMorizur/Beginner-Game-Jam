@@ -752,7 +752,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &460325595
 RectTransform:
@@ -1058,35 +1058,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 567494339}
-  - component: {fileID: 567494338}
+  - component: {fileID: 567494340}
   m_Layer: 0
-  m_Name: EndGameFade
+  m_Name: EndGameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &567494338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567494337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d353c8786192340b9e4fdcb76c01f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  blackImage: {fileID: 1050540492}
-  messageText: {fileID: 438091466}
-  instructionsText: {fileID: 1892315377}
-  fadeDuration: 2
-  messageDelay: 1
-  messageFadeDuration: 0.8
-  useUnscaledTime: 1
-  disablePlayerDuringFade: 1
-  hasFaded: 0
 --- !u!4 &567494339
 Transform:
   m_ObjectHideFlags: 0
@@ -1102,6 +1081,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &567494340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567494337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d353c8786192340b9e4fdcb76c01f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndGameController
+  blackImage: {fileID: 1050540492}
+  messageText: {fileID: 438091466}
+  startFadeDuration: 4
+  endFadeDuration: 3
+  messageDelay: 0.8
+  messageFadeDuration: 0.8
+  useUnscaledTime: 1
+  autoPlayAmbient: 1
+  ambientFadeInDuration: 1.5
+  ambientFadeOutDuration: 1.5
+  disablePlayerDuringEnd: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d4e31410fbdc946823c4fa201623fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnterBed
-  endGameFader: {fileID: 567494338}
+  faderController: {fileID: 567494340}
 --- !u!61 &984522392
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1559,7 +1561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1050540491
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1592,7 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2052,6 +2054,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2704aa07cfbba3459024c110b6efd4c, type: 3}
+--- !u!1001 &1491087467
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6086275205594836261, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_Name
+      value: AmbientAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.40477
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13584
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162906827609433917, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca9f38e679436f74582cb838ff8cfd7d, type: 3}
 --- !u!1001 &1618768745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2104,6 +2163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7264652538289013742, guid: 7c3a2aa15d4b02d44883a3bc3c14a054, type: 3}
+      propertyPath: interactAction
+      value: 
+      objectReference: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2596,3 +2659,4 @@ SceneRoots:
   - {fileID: 567494339}
   - {fileID: 460325595}
   - {fileID: 1383115035}
+  - {fileID: 1491087467}

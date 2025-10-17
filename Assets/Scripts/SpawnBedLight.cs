@@ -7,8 +7,8 @@ public class SpawnBedLight : MonoBehaviour
     
     void Awake()
     {
-        gm = GameManager.Instance;
         gameObject.GetComponent<Light2D>().intensity = 0f;
+        gm = GameManager.Instance;
     }
 
     void Update()

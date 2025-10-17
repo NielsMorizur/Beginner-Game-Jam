@@ -25,6 +25,7 @@ public class TimeTrialManager : MonoBehaviour
 
     public void StartTimer()
     {
+        gm.trialCandles = 0;
         timeLeft = timeLimit;
 
         if (runningTimer != null)

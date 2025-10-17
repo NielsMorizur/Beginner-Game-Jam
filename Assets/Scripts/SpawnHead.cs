@@ -11,6 +11,7 @@ public class SpawnHead : MonoBehaviour
     private GameObject player;
 
     private bool headSpawned = false;
+    private bool headCollected = false;
 
     void Awake()
     {
@@ -33,8 +34,9 @@ public class SpawnHead : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && gm.allCandlesCollected)
+        if (collision.CompareTag("Player") && gm.allCandlesCollected && !headCollected)
         {
+            headCollected = true;
             player = collision.gameObject;
             player.GetComponent<PlayerMove>().enabled = false;
             player.GetComponent<Rigidbody2D>().constraints |= RigidbodyConstraints2D.FreezePositionX;

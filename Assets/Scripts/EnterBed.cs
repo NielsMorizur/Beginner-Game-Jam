@@ -9,7 +9,7 @@ public class EnterBed : MonoBehaviour
 
     GameManager gm;
 
-    public EndGameFader endGameFader;
+    public EndGameController faderController;
 
     void Awake()
     {
@@ -35,7 +35,8 @@ public class EnterBed : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && gm.completeCollected)
         {
-            endGameFader.StartEndSequence(player, "Thank you for playing");
+            if (faderController != null)
+                faderController.StartEndSequence(player, "Thank you for playing");
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class CandleAppear : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class CandleAppear : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<BoxCollider2D>().enabled = true;
         GetComponent<SinusoidalMover>().enabled = true;
+        GetComponentInChildren<Light2D>().intensity = 0.4f;
         transform.position = ttm.candle1Location;
     }
     
