@@ -30,6 +30,7 @@ public class EndGameController : MonoBehaviour
     Coroutine runningFade = null;
 
     static bool s_hasDoneInitialFade = false;
+    private bool hasDoneEndFade = false;
 
     void Awake()
     {
@@ -85,7 +86,10 @@ public class EndGameController : MonoBehaviour
     // Public: fade transparent -> black and show message; disables player input while running
     public void StartEndSequence(GameObject player = null, string message = "Thank you for playing")
     {
-        if (isRunning) return;
+        if (isRunning || hasDoneEndFade) return;
+        hasDoneEndFade = true;
+        blackImage.gameObject.SetActive(true);
+        SetBlackAlpha(0f);
         StartCoroutine(EndSequenceRoutine(player, message));
     }
 
