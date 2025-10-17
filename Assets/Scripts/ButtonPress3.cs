@@ -37,4 +37,9 @@ public class ButtonPress3 : MonoBehaviour
             sr.sprite = offSprite;
         }
     }
+
+    public void DisableButton()
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -15,9 +15,16 @@ public class CollectCandle : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            gm.OnCandleCollected();
+            if (gameObject.CompareTag("TrialCandle"))
+            {
+                gm.OnTrialCandleCollected();
+            }else
+            {
+                gm.OnCandleCollected();   
+            }
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
+            if (GetComponent<SinusoidalMover>() != null) GetComponent<SinusoidalMover>().enabled = false;
             candleTaken?.Invoke();
         }
     }

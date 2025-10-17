@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c60f5a8e3d0e74eaccd1d2f2bfa7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  unlockLvl2Door:
+  spawnHead:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -62,6 +62,11 @@ MonoBehaviour:
   goalScored: 0
   legsCollected: 0
   upperCollected: 0
+  completeCollected: 0
   buttonLPressed: 0
   buttonRPressed: 0
   bothButtonsPressed: 0
+  candlesCollected: 0
+  allCandlesCollected: 0
+  trialCandles: 0
+  trialSuccess: 0

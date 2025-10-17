@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.16f;
     public LayerMask groundLayer;
+    public LayerMask movingPlatLayer;
 
     [Header("Sprite / Facing")]
     public bool flipSpriteByScale = true; // flips localScale.x based on movement
@@ -122,10 +123,13 @@ public class PlayerMove : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * shortHopMultiplier);
         }
 
-        if (IsGrounded() && Mathf.Abs(moveInput) <= 0.1f)
+        Collider2D hitMovingPlatform = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, movingPlatLayer);
+
+        if (IsGrounded() && Mathf.Abs(moveInput) <= 0.1f && hitMovingPlatform == null)
         {
             rb.constraints |= RigidbodyConstraints2D.FreezePositionX;
-        }else
+        }
+        else
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
@@ -154,7 +158,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (groundCheck == null) return false;
         Collider2D hit = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        return hit != null;
+        Collider2D hitMovingPlatform = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, movingPlatLayer);
+        return hit != null || hitMovingPlatform != null;
     }
 
     void OnDrawGizmosSelected()

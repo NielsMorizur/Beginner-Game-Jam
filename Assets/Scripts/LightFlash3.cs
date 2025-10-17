@@ -12,6 +12,9 @@ public class LightFlash3 : MonoBehaviour
     public float holdDuration = 0.08f;
     public float fadeDuration = 0.7f;
 
+    private float initialIntensity = 0.4f;
+    private Vector3 initialScale = new Vector3(1f, 1f, 1f);
+
     [System.Serializable] public class FloatEvent : UnityEvent<float> {}
     public FloatEvent onIntensityChanged;
     
@@ -20,8 +23,16 @@ public class LightFlash3 : MonoBehaviour
         if (light2d == null) light2d = GetComponent<Light2D>();
     }
 
-    void Start()
+    // void Start()
+    // {
+    //     ResetLight();
+    // }
+
+    public void ResetLight()
     {
+        light2d.enabled = true;
+        light2d.intensity = initialIntensity;
+        transform.localScale = initialScale;
         onIntensityChanged?.Invoke(1f);
     }
 

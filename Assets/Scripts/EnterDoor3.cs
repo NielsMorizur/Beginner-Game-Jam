@@ -27,7 +27,7 @@ public class EnterDoor3 : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E) && gm.legsCollected && gm.upperCollected)
+        if (playerInRange && Input.GetKeyDown(KeyCode.E) && gm.legsCollected && gm.upperCollected && !gm.completeCollected)
         {
             SceneManager.LoadScene(levelToLoad);
         }

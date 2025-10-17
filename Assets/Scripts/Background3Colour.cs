@@ -3,17 +3,20 @@ using UnityEngine;
 public class Background3Colour : MonoBehaviour
 {
     public bool subscribeAutomatically = true;
-    public LightFlash2 lightDimmer;
+    public LightFlashHead lightDimmer;
     public Color darkColor = Color.black;
     [Range(0f,1f)] public float darkenAmount = 1f;
 
     private Camera cam;
     private Color originalColor;
 
+    private Color camColour;
+
     void Awake()
     {
         cam = GetComponent<Camera>();
-        originalColor = cam.backgroundColor;
+        ColorUtility.TryParseHtmlString("#848484", out camColour);
+        originalColor = camColour;
     }
 
     void OnEnable()

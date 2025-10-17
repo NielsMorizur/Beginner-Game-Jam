@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public int candlesCollected = 0;
     public bool allCandlesCollected = false;
 
+    public int trialCandles = 0;
+    public bool trialSuccess = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (buttonLPressed && buttonRPressed) bothButtonsPressed = true;
+        if (candlesCollected + trialCandles >= 5) allCandlesCollected = true;
     }
 
     public void OnGoalScored()
@@ -76,6 +80,11 @@ public class GameManager : MonoBehaviour
     public void OnCandleCollected()
     {
         candlesCollected += 1;
-        if (candlesCollected >= 5) allCandlesCollected = true;
+    }
+
+    public void OnTrialCandleCollected()
+    {
+        trialCandles += 1;
+        if (trialCandles >= 3) trialSuccess = true;
     }
 }
